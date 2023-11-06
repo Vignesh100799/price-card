@@ -18,8 +18,6 @@ ul li span{
 }
 .wrong{
   color: grey;
-
-  
 }
 button{
   margin: 10px 0px;
@@ -68,8 +66,10 @@ ul{
  margin-top: 100px !important;
 } */
 body{
-  background: rgb(0,185,255);
-  background: linear-gradient(223deg, rgba(0,185,255,1) 35%, rgba(0,117,255,1) 91%);
+  /* background: rgb(0,185,255);
+  background: linear-gradient(223deg, rgba(0,185,255,1) 35%, rgba(0,117,255,1) 91%); */
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
   background-repeat: no-repeat;
   background-position: center;
  background-clip: content-box;

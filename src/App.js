@@ -2,6 +2,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from './Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   return (
@@ -19,8 +22,8 @@ function App() {
         six="Dedicated Phone Support"
         seven="Free Subdomain"
         eigth="Monthly Status Report"
-        freeRight= "&#10003;"
-        freeWrong="&#9747;"
+        freeRight= {<FontAwesomeIcon icon={faCheck} />}
+        freeWrong={<FontAwesomeIcon icon={faXmark} />}
         color="grey"
         free=" wrong "
         />
@@ -34,8 +37,8 @@ function App() {
          six="Dedicated Phone Support"
          seven="Free Subdomain"
          eigth="Monthly Status Report"
-         plusRight= "&#10003;"
-         plusWrong="&#9747;"
+         plusRight= {<FontAwesomeIcon icon={faCheck} />}
+         plusWrong={<FontAwesomeIcon icon={faXmark} />}
          plus ="wrong"
 
          />
@@ -50,7 +53,7 @@ function App() {
          six="Dedicated Phone Support"
          seven="Free Subdomain"
          eigth="Monthly Status Report"
-         proRight= "&#10003;"
+         proRight= {<FontAwesomeIcon icon={faCheck} />}
          />
         </div>
       </div>

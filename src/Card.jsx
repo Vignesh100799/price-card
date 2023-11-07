@@ -1,28 +1,39 @@
-import React from 'react';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Card = (props) => {
+
+const Card = ({ details }) => {
   return (
-    <div className="col-md-4 mb-5">  
-         <div className="card">
-            <div className="header text-center"><span>{props.userType}</span>
-              <h1>{props.price}/month</h1></div>
-            <div className="card-body">
-              <ul className="ul-style">
-                <li><span>{props.freeRight}{props.plusRight}{props.proRight}</span>{props.one}</li>
-                <li><span>{props.freeRight}{props.plusRight}{props.proRight}</span>{props.two}</li>
-                <li><span>{props.freeRight}{props.plusRight}{props.proRight}</span>{props.three}</li>
-                <li><span>{props.freeRight}{props.plusRight}{props.proRight}</span>{props.four}</li>
-                <li className={`${props.free}`} ><span>{props.freeWrong}{props.plusRight}{props.proRight}</span>{props.five}</li>
-                <li className={`${props.free}`}><span>{props.freeWrong}{props.plusRight}{props.proRight}</span>{props.six}</li>
-                <li className={`${props.free}`}><span>{props.freeWrong}{props.plusRight}{props.proRight}</span>{props.seven}</li>
-                <li className={`${props.free} ${props.plus}`}style={{color:`${props.color}`}}><span>{props.freeWrong}{props.plusWrong}{props.proRight}</span>{props.eigth}</li>
-              </ul>
-              <div className="text-center"><button>BUTTON</button></div>
-            </div>
+    <div className="col-lg-4 col-md-8">
+    <div className="card mb-5 mb-lg-0">
+      <div className="card-body">
+        <h5 className="card-title text-muted text-uppercase text-center">{details.plan}</h5>
+        <h6 className="card-price text-center">${details.price}<span className="period">/month</span></h6>
+        <hr />
+          <ul className="fa-ul">
+            {details.feature.map((item) => {
+              return (
+                <li className={item.value ? '' : 'text-muted'}>
+                  <span className="fa-li">
+                    {item.value ? (
+                      <FontAwesomeIcon icon={faCheck} />
+                    ) : (
+                      <FontAwesomeIcon icon={faXmark} />
+                    )}
+                  </span>
+                  {item.key}
+                </li>
+              );
+            })}
+          </ul>
+          <div className="d-grid">
+            <button className="btn btn-primary text-uppercase">Button</button>
           </div>
-          </div>
-   
-  )
-}
+      </div>
+    </div>
+  </div>  );
+};
 
-export default Card
+export default Card;

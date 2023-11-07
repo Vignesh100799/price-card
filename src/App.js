@@ -2,64 +2,142 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from './Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
 
 function App() {
+  const planDetail = [
+    {
+      price: 0,
+      plan: "FREE",
+      feature :[
+        {
+          key:"Single User",
+          value: true
+        },
+        {
+          key:"5GB Storage",
+          value: true
+        },
+        {
+          key:"Unlimited Public Projects",
+          value: true
+        },
+        {
+          key:"Community Access",
+          value: true
+        },
+        {
+          key:"Unlimited Private Projects",
+          value: false
+        },
+        {
+          key:"Dedicated Phone Support",
+          value: false
+        },
+        {
+          key:"Free Subdomain",
+          value: false
+        },
+        {
+          key:"Monthly Status Reports",
+          value: false
+        }
+      ]
+    },
+    {
+      price: 9,
+      plan: "PLUS",
+      feature :[
+        {
+          key:"5 Users",
+          value: true
+        },
+        {
+          key:"50GB Storage",
+          value: true
+        },
+        {
+          key:"Unlimited Public Projects",
+          value: true
+        },
+        {
+          key:"Community Access",
+          value: true
+        },
+        {
+          key:"Unlimited Private Projects",
+          value: true
+        },
+        {
+          key:"Dedicated Phone Support",
+          value: true
+        },
+        {
+          key:"Free Subdomain",
+          value: true
+        },
+        {
+          key:"Monthly Status Reports",
+          value: false
+        }
+      ]
+
+    },
+    {
+      price: 49,
+      plan: "PRO",
+      feature :[
+        {
+          key:"Unlimited Users",
+          value: true
+        },
+        {
+          key:"150GB Storage",
+          value: true
+        },
+        {
+          key:"Unlimited Public Projects",
+          value: true
+        },
+        {
+          key:"Community Access",
+          value: true
+        },
+        {
+          key:"Unlimited Private Projects",
+          value: true
+        },
+        {
+          key:"Dedicated Phone Support",
+          value: true
+        },
+        {
+          key:"Free Subdomain",
+          value: true
+        },
+        {
+          key:"Monthly Status Reports",
+          value: true
+        }
+      ]
+    }
+ 
+  ]
+
   return (
-     <div className="container py-5 justify-content-center align-items-center"> 
-     <h1 className='heading'>PRICE CARD SECTION</h1>
+    <section className='main py-5'>
+    <div className="container">
+      <h1 className='heading'>PRICE CARD SECTION</h1>
       <div className="row justify-content-center align-items-center">
-       
-        <Card price="$0"
-        userType ="FREE"
-        one="Single User"
-        two="50GB Storage"
-        three="Unlimited Public Projects"
-        four="Community Access"
-        five="Unlimited Private Projects"
-        six="Dedicated Phone Support"
-        seven="Free Subdomain"
-        eigth="Monthly Status Report"
-        freeRight= {<FontAwesomeIcon icon={faCheck} />}
-        freeWrong={<FontAwesomeIcon icon={faXmark} />}
-        color="grey"
-        free=" wrong "
-        />
-        <Card price="$9"
-         userType ="PLUS"
-         one="5 Users"
-         two="50GB Storage"
-         three="Unlimited Public Projects"
-         four="Community Access"
-         five="Unlimited Private Projects"
-         six="Dedicated Phone Support"
-         seven="Free Subdomain"
-         eigth="Monthly Status Report"
-         plusRight= {<FontAwesomeIcon icon={faCheck} />}
-         plusWrong={<FontAwesomeIcon icon={faXmark} />}
-         plus ="wrong"
-
-         />
-        <Card 
-         price="$49"
-         userType ="PRO"  
-         one="Unlimited Users"
-         two="50GB Storage"
-         three="Unlimited Public Projects"
-         four="Community Access"
-         five="Unlimited Private Projects"
-         six="Dedicated Phone Support"
-         seven="Free Subdomain"
-         eigth="Monthly Status Report"
-         proRight= {<FontAwesomeIcon icon={faCheck} />}
-         />
-        </div>
+        {planDetail.map((detail) => {
+          return <Card
+            details={detail} ></Card>
+        })}
       </div>
-      
+    </div>
+    </section>
 
-  )
+  );
 }
 
 export default App;
